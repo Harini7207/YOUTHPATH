@@ -1,0 +1,196 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with education, skills, and career preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "fullName": { "type": "string", "maxLength": 150 },
+        "location": { "type": "string", "maxLength": 150 },
+        "educationLevel": { "type": "string", "maxLength": 100 },
+        "degree": { "type": "string", "maxLength": 150 },
+        "graduationYear": { "type": "string", "maxLength": 10 },
+        "technicalSkills": { "type": "array" },
+        "softSkills": { "type": "array" },
+        "workExperience": { "type": "string", "maxLength": 3000 },
+        "internshipExperience": { "type": "string", "maxLength": 3000 },
+        "projects": { "type": "string", "maxLength": 3000 },
+        "certifications": { "type": "string", "maxLength": 2000 },
+        "languages": { "type": "string", "maxLength": 500 },
+        "preferredJobRoles": { "type": "array" },
+        "preferredLocations": { "type": "array" },
+        "preferredEmploymentType": { "type": "string", "maxLength": 50 },
+        "careerInterests": { "type": "string", "maxLength": 2000 },
+        "learningGoals": { "type": "string", "maxLength": 2000 },
+        "profileCompletion": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "fullName"]
+    },
+    "CareerRecommendation": {
+      "title": "CareerRecommendation",
+      "description": "AI-generated personalized career recommendations",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "careerTitle": { "type": "string", "maxLength": 150 },
+        "explanation": { "type": "string", "maxLength": 3000 },
+        "matchingSkills": { "type": "array" },
+        "missingSkills": { "type": "array" },
+        "learningRoadmap": { "type": "array" },
+        "beginnerProjects": { "type": "array" },
+        "nextSteps": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "careerTitle", "explanation"]
+    },
+    "Resume": {
+      "title": "Resume",
+      "description": "User created resume drafts and versions",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 150 },
+        "template": { "type": "string", "maxLength": 50 },
+        "contactInfo": { "type": "object" },
+        "summary": { "type": "string", "maxLength": 3000 },
+        "education": { "type": "array" },
+        "technicalSkills": { "type": "array" },
+        "softSkills": { "type": "array" },
+        "projects": { "type": "array" },
+        "internships": { "type": "array" },
+        "workExperience": { "type": "array" },
+        "certifications": { "type": "array" },
+        "achievements": { "type": "array" },
+        "languages": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "title", "template"]
+    },
+    "SavedJob": {
+      "title": "SavedJob",
+      "description": "Jobs bookmarked by the user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "jobId": { "type": "string", "maxLength": 150 },
+        "title": { "type": "string", "maxLength": 200 },
+        "company": { "type": "string", "maxLength": 200 },
+        "location": { "type": "string", "maxLength": 200 },
+        "employmentType": { "type": "string", "maxLength": 50 },
+        "remoteType": { "type": "string", "maxLength": 50 },
+        "salary": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 5000 },
+        "url": { "type": "string", "maxLength": 1000 },
+        "source": { "type": "string", "maxLength": 100 },
+        "postedDate": { "type": "string", "maxLength": 50 },
+        "savedAt": { "type": "string" }
+      },
+      "required": ["userId", "jobId", "title", "company"]
+    },
+    "InterviewSession": {
+      "title": "InterviewSession",
+      "description": "Interactive interview practice session history and feedback",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "role": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 100 },
+        "difficulty": { "type": "string", "maxLength": 50 },
+        "questionCount": { "type": "number" },
+        "questions": { "type": "array" },
+        "answers": { "type": "array" },
+        "feedback": { "type": "array" },
+        "overallScore": { "type": "number" },
+        "summary": { "type": "string", "maxLength": 4000 },
+        "completedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "role", "category"]
+    },
+    "LearningProgress": {
+      "title": "LearningProgress",
+      "description": "User progress on skills, tutorials, and certifications",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "resourceId": { "type": "string", "maxLength": 150 },
+        "title": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "level": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "maxLength": 50 },
+        "progressPercentage": { "type": "number" },
+        "notes": { "type": "string", "maxLength": 2000 },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "resourceId", "status"]
+    },
+    "AppNotification": {
+      "title": "AppNotification",
+      "description": "In-app notifications for milestones and job alerts",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "message": { "type": "string", "maxLength": 1000 },
+        "type": { "type": "string", "maxLength": 50 },
+        "isRead": { "type": "boolean" },
+        "link": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "title", "message", "isRead"]
+    },
+    "Feedback": {
+      "title": "Feedback",
+      "description": "User feedback, suggestions, and contact messages",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "category": { "type": "string", "maxLength": 100 },
+        "rating": { "type": "number" },
+        "message": { "type": "string", "maxLength": 3000 },
+        "contactEmail": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["category", "rating", "message"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile documents stored by user UID"
+    },
+    "/careerRecommendations/{recommendationId}": {
+      "schema": "CareerRecommendation",
+      "description": "Saved AI career recommendation records"
+    },
+    "/resumes/{resumeId}": {
+      "schema": "Resume",
+      "description": "User resumes and drafts"
+    },
+    "/savedJobs/{savedJobId}": {
+      "schema": "SavedJob",
+      "description": "Saved job postings for user"
+    },
+    "/interviewSessions/{sessionId}": {
+      "schema": "InterviewSession",
+      "description": "Mock interview sessions and evaluations"
+    },
+    "/learningProgress/{progressId}": {
+      "schema": "LearningProgress",
+      "description": "User learning paths and progress markers"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "AppNotification",
+      "description": "User notification messages"
+    },
+    "/feedback/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "User feedback submissions"
+    }
+  }
+}

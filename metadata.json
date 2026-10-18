@@ -1,0 +1,6 @@
+{
+  "name": "YouthPath",
+  "description": "YouthPath — Smart Employment Support System for Youth. Discover career paths, build professional resumes, prepare for interviews, and explore verified job opportunities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
